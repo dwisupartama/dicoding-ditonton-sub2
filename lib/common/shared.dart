@@ -20,10 +20,9 @@ class Shared {
         certFileBytes = utf8.encode(_certificatedString);
       } else {
         try {
-          certFileBytes =
-              (await rootBundle.load('certificate/certificates.pem'))
-                  .buffer
-                  .asInt8List();
+          certFileBytes = (await rootBundle.load('certificate/certificate.pem'))
+              .buffer
+              .asInt8List();
           log('Successfully access and load certificate.pem file!');
         } catch (e) {
           certFileBytes = utf8.encode(_certificatedString);
